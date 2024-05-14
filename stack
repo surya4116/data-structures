@@ -1,0 +1,67 @@
+#include<stdio.h>
+#include<conio.h>
+int stack[5],top=-1,b,c,res;
+void push()
+{
+   If(top>=5)
+   {
+      Printf(“\n overflow”);
+return;
+}
+else
+{
+printf(“enter the number to be pushed \n”);
+scanf(“%d”,&b);
+top++;
+stack[top]=b;
+printf(“the number pushed is %d”,stack[top]);
+return;
+}
+}
+void pop()
+{
+if(top==-1)
+{
+printf(“underflow \n”);
+return;
+}
+else
+{
+res=stack[top];
+top--;
+printf(“the deleted number is %d \n”,res);
+return;
+}
+void display()
+{
+int i;
+if(top==-1)
+{
+printf(“underflow \n”);
+return;
+}
+for(i=0;i<=top;i++)
+{
+printf(“%d\t”,stack[i]);
+}
+}
+void main()
+{
+int s;
+clrscr();
+printf(“\n 1.push \n 2.pop \n 3.display”);
+do
+{
+printf(“\n enter your choice)”;
+scanf(“%d”,&c);
+switch(c)
+{
+case 1:push();break;
+case 2:pop();break;
+case 3:display();break;
+default:printf(“invalid option”);
+exit(0);
+}
+}while(c<4);
+getch();
+}
